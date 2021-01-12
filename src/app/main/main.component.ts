@@ -53,11 +53,11 @@ export class MainComponent implements OnInit {
       self.moveBox(e, self.selectedBox)
     }
     if(this.toggle==true){
-      window.document.addEventListener("keydown", abc)
+      window.addEventListener("keydown", abc)
       this.toggleText = 'ON'
     }
     else{
-      window.document.removeEventListener("keydown", abc);
+      window.removeEventListener("keydown", abc);
       this.toggleText = 'OFF'
       this.selectedBox = null
     }
@@ -67,13 +67,14 @@ export class MainComponent implements OnInit {
     let box = (<HTMLElement>document.getElementById('box' + boxSelected))
     //get box position relative to fence
     var parentPos = document.getElementById('fence').getBoundingClientRect();
-    let childPos = document.getElementById('box' + boxSelected).getBoundingClientRect();
-    let relativePos: any = {};
-
-    relativePos.top = childPos.top - parentPos.top,
-    relativePos.right = childPos.right - parentPos.right,
-    relativePos.bottom = childPos.bottom - parentPos.bottom,
-    relativePos.left = childPos.left - parentPos.left;
+    if(boxSelected!=null){
+    var childPos = document.getElementById('box' + boxSelected).getBoundingClientRect();
+    var relativePos: any = {};
+    relativePos.top = childPos.top - parentPos.top
+    relativePos.right = childPos.right - parentPos.right
+    relativePos.bottom = childPos.bottom - parentPos.bottom
+    relativePos.left = childPos.left - parentPos.left
+    }
 
     //console.log(box)
     var key_code = e.keyCode;
