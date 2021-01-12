@@ -1,1 +1,18 @@
-<p>main works!</p>
+<header style="color:rgb(31, 179, 238);margin-left: 520px;font-weight: bold;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">MOVEABLE BOX GENERATOR</header>
+
+<div style="margin-left: 500px;margin-top: 50px;">
+    <button class="btn" (click)="createBox()">
+        Create Box
+    </button>
+    <button class="btn" (click)="toggleEventListener()">
+        Selection {{ this.toggleText }}
+    </button>
+</div>
+<div class="boundary" id="fence">
+<div class="content" *ngFor="let box of boxes; let i = index" >
+   <div class="box" id="box{{i}}" draggable="true" (click)="selectBox(i)" (keydown)="moveBox($event, i)" [ngClass]="{'highlight': selectedBox === i}">
+       Box {{ i+1 }}
+   </div>
+</div>
+</div>
+

@@ -1,0 +1,51 @@
+.boundary{
+    position:relative;
+    border: 2px solid red;
+    height: 100%;
+    width: 100%;
+}
+.content {
+    display: inline-flex;
+    flex-flow: row;
+    margin: 10px;
+ }
+
+ .box{
+    background-color: #f5f8fa;
+    border-radius: 8px;
+    padding: 15px;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    color:rgb(31, 179, 238);
+    margin: 10px;
+    position: relative;
+ }
+ 
+ .highlight{ 
+    border: 3px solid rgb(31, 179, 238); 
+ }
+
+ .btn{
+    background: rgb(31, 179, 238);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 10px;
+ }
+
+ .btn:focus{
+    outline: 0;
+    box-shadow: 0;
+ }
+
+ .btn:active{
+    outline: 0;
+    box-shadow: 0;
+    background-color: white;
+    color:rgb(31, 179, 238);
+ }
